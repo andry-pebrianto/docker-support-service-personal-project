@@ -20,6 +20,6 @@ jobs:
           username: root
           key: ${{ secrets.DO_SSH_KEY }}
           script: |
-            cd portfolio-project-proxy
+            cd nginx-proxy-for-portfolio-project
             git pull origin main
             docker compose restart
