@@ -23,7 +23,5 @@ jobs:
             cd nginx-proxy-for-portfolio-project
             git pull origin main
 
-            docker network create global || true
             docker-compose down --remove-orphans
             docker-compose up --build -d
-            
