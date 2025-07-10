@@ -1,4 +1,4 @@
-# Nginx Proxy for my Portfolio Project
+# Nginx Proxy For my Portfolio Project
 
 List Project:
 - <a href="https://github.com/andry-pebrianto/circle-server">Circle</a>
