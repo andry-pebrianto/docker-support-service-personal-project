@@ -15,8 +15,6 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - global
-    environment:
-      ENABLE_IPV6: "true"
     depends_on:
       - nginx-proxy-acme
 
