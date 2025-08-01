@@ -9,7 +9,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - vhost.d:/etc/nginx/vhost.d
+      - ./vhost.d:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - ./certs:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
@@ -27,7 +27,7 @@ services:
       DEFAULT_EMAIL: andryforwork227@email.com
     volumes:
       - ./certs:/etc/nginx/certs
-      - vhost.d:/etc/nginx/vhost.d
+      - ./vhost.d:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
