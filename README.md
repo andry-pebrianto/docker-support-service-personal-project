@@ -1,6 +1,13 @@
-# Docker CV Project
+# 🚀 Docker CV Project
 
-#### Docker Setup for My Personal CV Project, Featuring Nginx Reverse Proxy, RabbitMQ, and Redis.
+#### Docker Setup for My Personal CV Project.
+
+### ✅ Featuring:
+
+- **Nginx Proxy** using `jwilder/nginx-proxy`
+- **Automatic SSL** via `jrcs/letsencrypt-nginx-proxy-companion`
+- **RabbitMQ** with dashboard (`rabbitmq:3-management`)
+- **Redis** with password protection
 
 List Project:
 
