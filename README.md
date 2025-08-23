@@ -8,6 +8,7 @@
 - **Automatic SSL** via `jrcs/letsencrypt-nginx-proxy-companion`
 - **RabbitMQ** with dashboard (`rabbitmq:3-management`)
 - **Redis** with password protection
+- **Portainer** using `portainer/portainer-ce:latest`
 
 List Project:
 

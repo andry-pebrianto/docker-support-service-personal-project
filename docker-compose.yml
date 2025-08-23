@@ -43,8 +43,8 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
-      VIRTUAL_HOST: ${VIRTUAL_HOST}
-      VIRTUAL_PORT: ${VIRTUAL_PORT}
+      VIRTUAL_HOST: ${RABBITMQ_VIRTUAL_HOST}
+      VIRTUAL_PORT: ${RABBITMQ_VIRTUAL_PORT}
       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
     volumes:
@@ -74,12 +74,32 @@ services:
       timeout: 10s
       retries: 5
 
+  portainer-server:
+    image: portainer/portainer-ce:latest
+    container_name: portainer-server
+    restart: always
+    environment:
+      VIRTUAL_HOST: ${PORTAINER_VIRTUAL_HOST}
+      VIRTUAL_PORT: ${PORTAINER_VIRTUAL_PORT}
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}
+      ADMIN_USERNAME: ${ADMIN_USERNAME}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
+    networks:
+      - global
+    ports:
+      - "9000:9000"
+
 volumes:
   rabbitmq-data:
   redis-data:
   vhost.d:
   html:
   certs:
+  portainer-data:
 
 networks:
   global:
